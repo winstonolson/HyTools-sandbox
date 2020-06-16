@@ -101,7 +101,7 @@ def generate_brdf_coeffs_img(hyObj,ross,li):
 
     while not iterator.complete:        
         band = iterator.read_next()    
-        brdf_coeffs.append(generate_brdf_coeffs_band(band,hyObj.mask,k_vol,k_geom))
+        brdf_coeffs.append(generate_brdf_coeff_band(band,hyObj.mask,k_vol,k_geom))
     # Store coeffs in a pandas dataframe
     brdf_df =  pd.DataFrame(brdf_coeffs,index = hyObj.wavelengths,columns=['k_vol','k_geom','k_iso'])
 
